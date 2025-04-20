@@ -1,0 +1,415 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+    margin-top: 80px; /* Espacio para el header fijo */
+}
+
+.container {
+    width: 600px;
+    margin: 1.5rem auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo mejorado para h1 */
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(90deg, #007BFF, #00D4FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* Header fijo */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el formulario de publicación */
+#postForm {
+    background: #f9f9f9; /* Fondo claro para destacar */
+    padding: 20px; /* Espaciado interno */
+    margin-bottom: 20px; /* Separación del contenido inferior */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+#postForm.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Estilo para el textarea */
+#postInput {
+    width: 100%; /* Ocupa todo el ancho del formulario */
+    min-height: 100px; /* Altura mínima */
+    padding: 10px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    resize: vertical; /* Permitir redimensionar solo verticalmente */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Estilo para el botón de publicación */
+#postForm button {
+    margin-top: 10px; /* Separación del textarea */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#postForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Publicaciones */
+.post {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.post-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+post-actions button:hover {
+    background-color: #0056b3;
+}
+
+.post p strong {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Respuestas */
+.replies {
+    margin-top: 10px;
+    padding-left: 20px;
+    border-left: 2px solid #ddd;
+}
+
+.reply {
+    background: #f9f9f9;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.reply-actions {
+    margin-top: 5px;
+}
+
+.reply-actions button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.reply-actions button:hover {
+    background-color: #0056b3;
+}
+
+/* Área de texto para responder */
+.reply-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+/* Name Form Container */
+.name-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#nameForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#nameInput {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#nameInput:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#nameForm button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#nameForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Join Chat Container */
+.join-chat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#joinChatForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#joinChatForm h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#joinChatForm input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#joinChatForm input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#joinChatForm button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#joinChatForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        padding: 8px;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.9rem;
+    }
+
+    .post {
+        padding: 10px;
+    }
+
+    .post-actions button {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+        padding: 5px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .post {
+        padding: 8px;
+    }
+
+    .post-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .post-actions button {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .reply {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de mensajería directa</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div id="joinChatContainer" class="join-chat-container">
+        <form id="joinChatForm" onsubmit="handleJoinChat(event)">
+            <h2>Únete al chat</h2>
+            <input type="text" id="chatNameInput" placeholder="Ingresa tu nombre" required />
+            <input type="text" id="chatRoomInput" placeholder="Ingresa el tema o sala (opcional)" />
+            <button type="submit">Unirse</button>
+        </form>
+    </div>
+
+    <div class="header" style="display: none;">
+        <h1>Simulador de mensajería directa</h1>
+        <p id="fixedName"></p>
+        <p id="chatRoom"></p>
+    </div>
+
+    <div class="content" style="display: none;">
+        <div class="container">
+            <form id="postForm" onsubmit="handleFormSubmit(event)">
+                <textarea id="postInput" placeholder="Escribe tu publicación..." required></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+            <div id="posts"></div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <footer>
+            <p>&copy; 2025 Gerardo López. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
